@@ -1,13 +1,12 @@
 package foundation.stack.datamill.http.impl;
 
-import foundation.stack.datamill.http.Entity;
 import foundation.stack.datamill.json.JsonObject;
 import rx.Observable;
 
 /**
  * @author Ravi Chodavarapu (rchodava@gmail.com)
  */
-public class BytesEntity implements Entity {
+public class BytesEntity extends AbstractEntity {
     private byte[] bytes;
 
     public BytesEntity(byte[] bytes) {

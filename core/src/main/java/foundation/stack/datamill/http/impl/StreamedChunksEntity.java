@@ -1,6 +1,5 @@
 package foundation.stack.datamill.http.impl;
 
-import foundation.stack.datamill.http.Entity;
 import foundation.stack.datamill.http.HttpException;
 import foundation.stack.datamill.json.JsonObject;
 import rx.Observable;
@@ -12,7 +11,8 @@ import java.nio.charset.Charset;
 /**
  * @author Ravi Chodavarapu (rchodava@gmail.com)
  */
-public class StreamedChunksEntity implements Entity {
+public class StreamedChunksEntity extends AbstractEntity {
+
     private final Observable<byte[]> chunks;
     private final Charset charset;
 

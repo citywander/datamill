@@ -1,7 +1,6 @@
 package foundation.stack.datamill.http.impl;
 
 import org.apache.commons.io.output.ByteArrayOutputStream;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -30,7 +29,9 @@ public class InputStreamEntityTest {
                             }
                         })
                 .map(stream -> stream.toByteArray()).toBlocking().last()));
-        Assert.assertEquals("value", new InputStreamEntity(new ByteArrayInputStream("{\"name\":\"value\"}".getBytes()))
+        assertEquals("value", new InputStreamEntity(new ByteArrayInputStream("{\"name\":\"value\"}".getBytes()))
                 .asJson().toBlocking().last().get("name").asString());
+        assertEquals("value", new InputStreamEntity(new ByteArrayInputStream("[{\"name\":\"value\"}]".getBytes()))
+                .asJsonFromArray().toBlocking().last().get("name").asString());
     }
 }

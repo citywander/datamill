@@ -27,7 +27,9 @@ public class BytesEntityTest {
                             }
                         })
                 .map(stream -> stream.toByteArray()).toBlocking().last()));
-        Assert.assertEquals("value", new BytesEntity("{\"name\":\"value\"}".getBytes())
+        assertEquals("value", new BytesEntity("{\"name\":\"value\"}".getBytes())
                 .asJson().toBlocking().last().get("name").asString());
+        assertEquals("value", new BytesEntity("[{\"name\":\"value\"}]".getBytes())
+                .asJsonFromArray().toBlocking().last().get("name").asString());
     }
 }

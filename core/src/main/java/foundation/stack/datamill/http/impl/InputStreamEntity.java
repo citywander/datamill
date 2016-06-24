@@ -1,7 +1,6 @@
 package foundation.stack.datamill.http.impl;
 
 import foundation.stack.datamill.http.HttpException;
-import foundation.stack.datamill.http.Entity;
 import foundation.stack.datamill.json.JsonObject;
 import rx.Observable;
 import rx.functions.Action0;
@@ -14,7 +13,8 @@ import java.io.InputStream;
 /**
  * @author Ravi Chodavarapu (rchodava@gmail.com)
  */
-public class InputStreamEntity implements Entity {
+public class InputStreamEntity extends AbstractEntity {
+
     private final InputStream inputStream;
     private final Action0 completionHandler;
 

@@ -19,6 +19,11 @@ public class EmptyEntity implements Entity {
     }
 
     @Override
+    public Observable<JsonObject> asJsonFromArray() {
+        return Observable.empty();
+    }
+
+    @Override
     public Observable<byte[]> asChunks() {
         return Observable.empty();
     }

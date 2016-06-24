@@ -8,6 +8,7 @@ import rx.Observable;
 public interface Entity {
     Observable<byte[]> asBytes();
     Observable<JsonObject> asJson();
+    Observable<JsonObject> asJsonFromArray();
     Observable<byte[]> asChunks();
     Observable<String> asString();
 }

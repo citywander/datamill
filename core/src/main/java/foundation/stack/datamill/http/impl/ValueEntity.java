@@ -1,7 +1,6 @@
 package foundation.stack.datamill.http.impl;
 
 import foundation.stack.datamill.http.HttpException;
-import foundation.stack.datamill.http.Entity;
 import foundation.stack.datamill.json.JsonObject;
 import foundation.stack.datamill.values.Value;
 import rx.Observable;
@@ -9,7 +8,7 @@ import rx.Observable;
 /**
  * @author Ravi Chodavarapu (rchodava@gmail.com)
  */
-public class ValueEntity implements Entity {
+public class ValueEntity extends AbstractEntity {
     private Value value;
 
     public ValueEntity(Value value) {
